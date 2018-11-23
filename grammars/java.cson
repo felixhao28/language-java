@@ -203,7 +203,7 @@
         'include': '#all-types'
       }
       {
-        'begin': '(?<!\\])\\s*({)' # Don't match new int[]{1, 2, 3};
+        'begin': '(?<=\\))\\s*({)' # Don't match new int[]{1, 2, 3};
         'beginCaptures':
           '1':
             'name': 'punctuation.section.inner-class.begin.bracket.curly.java'
