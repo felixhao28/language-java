@@ -605,6 +605,24 @@
                   }
                 ]
               }
+              # Represents enum's constant field with anonymous inner class, e.g. `Test { void f() {} }`
+              {
+                'begin': '(\\w+)\\s*(\\{)'
+                'beginCaptures':
+                  '1':
+                    'name': 'constant.other.enum.java'
+                  '2':
+                    'name': 'punctuation.section.class.begin.bracket.curly.java'
+                'end': '\\}'
+                'endCaptures':
+                  '0':
+                    'name': 'punctuation.section.class.end.bracket.curly.java'
+                'patterns': [
+                  {
+                    'include': '#class-body'
+                  }
+                ]
+              }
               # Represents enum's constant field, e.g. `Test`
               {
                 'match': '\\b\\w+\\b'
